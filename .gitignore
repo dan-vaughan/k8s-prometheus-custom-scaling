@@ -83,7 +83,7 @@ celerybeat-schedule
 
 # Environments
 .env
-.venv
+.*venv
 env/
 venv/
 ENV/
@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# text editor
+.vscode/
+
+# js
+node_modules/
+package-lock.json
+*/public/bundle.js
