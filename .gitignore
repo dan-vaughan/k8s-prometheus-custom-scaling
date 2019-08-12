@@ -103,7 +103,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-<<<<<<< Updated upstream
 # text editor
 .vscode/
 
@@ -111,7 +110,3 @@ venv.bak/
 node_modules/
 package-lock.json
 */public/bundle.js
-=======
-# vscode
-.vscode/
->>>>>>> Stashed changes
