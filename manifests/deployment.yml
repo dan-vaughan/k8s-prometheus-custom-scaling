@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: york-pnl-demo
+spec:
+  selector:
+    matchLabels:
+      app: york-pnl-demo
+  template:
+    metadata:
+      labels:
+        app: york-pnl-demo
+    spec:
+      containers:
+        - name: york-pnl-demo
+          image: eu.gcr.io/radiant-century-248815/york-pnl-demo
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8000

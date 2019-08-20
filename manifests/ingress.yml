@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: york-pnl-ingress
+spec:
+  backend:
+    serviceName: york-pnl-demo
+    servicePort: 8080
