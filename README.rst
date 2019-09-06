@@ -1,5 +1,5 @@
-Dan's 100% Real and Functioning Profit & Loss Calculator
-========================================================
+k8s Prometheus Custom Scaling Demo
+==================================
 
 Credit to:
 
