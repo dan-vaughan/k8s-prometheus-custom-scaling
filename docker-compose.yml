@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  prometheus_demo:
+    container_name: prometheus_demo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8000"

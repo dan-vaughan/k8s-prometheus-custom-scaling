@@ -1,5 +1,5 @@
 from flask import Flask
-from pnl_server.views import pages_blueprint
+from demo_app.views import pages_blueprint
 
 application = Flask(__name__, static_folder="./public", template_folder="./templates")
 
