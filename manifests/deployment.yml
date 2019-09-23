@@ -1,23 +1,26 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: york-pnl-demo
+  name: prometheus-demo-app
+  labels:
+    app: prometheus-demo-app
 spec:
   selector:
     matchLabels:
-      app: york-pnl-demo
+      app: prometheus-demo-app
   template:
     metadata:
       labels:
-        app: york-pnl-demo
+        app: prometheus-demo-app
     spec:
       containers:
-        - name: york-pnl-demo
-          image: eu.gcr.io/radiant-century-248815/york-pnl-demo
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "100m"
-          ports:
-            - containerPort: 8000
+      - name: prometheus-demo-app
+        image: prometheus-scaling-demo:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+          name: http

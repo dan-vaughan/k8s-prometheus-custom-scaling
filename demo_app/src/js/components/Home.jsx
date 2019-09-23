@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Col, Row, Navbar, Button, Image, Jumbotron } from 'react-bootstrap';
+const axios = require('axios');
 
 function simulateNetworkRequest() {
     return new Promise(resolve => setTimeout(resolve, 2000));
-  }
-  
+}
+
 
 class SendButton extends React.Component {
     constructor(props) {
@@ -17,11 +18,11 @@ class SendButton extends React.Component {
 
     handleClick() {
         if (!this.state.isLoading) {
-            console.log("set to loading");
-            this.setState({"isLoading": true})
-            simulateNetworkRequest().then(() => {
-                console.log("finished simulating");
-                this.setState({"isLoading": false})
+            this.setState({ "isLoading": true })
+            axios.post("/click-button").then((response) => {
+                console.log(response);
+            }).then(() => {
+                this.setState({ "isLoading": false })
             })
         }
     }
@@ -34,26 +35,13 @@ class SendButton extends React.Component {
     }
 }
 
-class MyNav extends React.Component {
-    render() {
-        return (
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home">Demonstration: Custom Scaling with Flask, Kubernetes & Prometheus</Navbar.Brand>
-            </Navbar>
-        )
-    }
-}
-
 export default class Home extends React.Component {
     render() {
         return (
             <div>
                 <Container className="justify-content-center">
                     <Jumbotron>
-                        <h1>Demonstration: Custom Scaling with Flask, Kubernetes & Prometheus</h1>
-                        <p>
-                            Hit the button to scale!
-                        </p>
+                        <h1>Demonstration: Custom Scaling with Kubernetes & Prometheus</h1>
                         <p>
                             <Row>
                                 <Col md={6} className="logo-col"><Image src="/public/img/kubernetes_logo.png"></Image></Col>

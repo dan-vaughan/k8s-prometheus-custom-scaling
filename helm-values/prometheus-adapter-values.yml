@@ -1,0 +1,11 @@
+rules:
+  default: false
+  custom:
+  - seriesQuery: 'demo_app_button_clicks_total'
+    resources: { template: "<<.Resource>>" }
+    name:
+      matches: "^(.*)_total"
+      as: "${1}_per_second"
+    metricsQuery: "sum(rate(<<.Series>>{<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)"
+prometheus:
+  url: http://prom-demo-prometheus-opera-prometheus.default

@@ -1,8 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: york-pnl-ingress
+  name: prometheus-demo-app
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  backend:
-    serviceName: york-pnl-demo
-    servicePort: 8080
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: prometheus-demo-app
+              servicePort: 8080
