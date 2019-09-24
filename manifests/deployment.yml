@@ -15,12 +15,11 @@ spec:
     spec:
       containers:
       - name: prometheus-demo-app
-        image: prometheus-scaling-demo:latest
+        image: flipstone42/k8s-prometheus-custom-scaling:latest
         resources:
           limits:
             memory: "128Mi"
             cpu: "100m"
-        imagePullPolicy: Never
         ports:
         - containerPort: 8000
           name: http

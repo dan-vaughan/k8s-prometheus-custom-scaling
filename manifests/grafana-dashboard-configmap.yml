@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: prometheus-demo-app-dashboard
   labels:
-    grafana_dashboard: 1
+    grafana_dashboard: ""
 data:
   prom-demo-app-dash.json: |
     {
@@ -31,7 +31,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "description": "Normalised click rate during last minute for every demo-prometheus-app pod",
+        "description": "Normalised click rate during last 2 minutes for every demo-prometheus-app pod",
         "fill": 0,
         "fillGradient": 0,
         "gridPos": {
@@ -74,7 +74,7 @@ data:
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Clicks Per Pod Per Second",
+        "title": "Click Rate Per Pod",
         "tooltip": {
           "shared": true,
           "sort": 0,
