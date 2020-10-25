@@ -1,8 +1,4 @@
-FROM ubuntu:19.04
-
-RUN apt-get update
-RUN apt-get install -y python python-pip
-RUN apt-get install -y npm nodejs
+FROM nikolaik/python-nodejs:python3.8-nodejs14
 
 COPY . /app
 

@@ -1,5 +1,5 @@
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
-apiVersion: autoscaling/v2beta1
 metadata:
   name: prometheus-demo-app
 spec:
@@ -15,5 +15,8 @@ spec:
   # given metric across all pods controlled by the autoscaling target
   - type: Pods
     pods:
-      metricName: demo_app_button_clicks_per_second
-      targetAverageValue: 10m
+      metric:
+        name: demo_app_button_clicks_per_second
+      target:
+        type: AverageValue
+        averageValue: 10m

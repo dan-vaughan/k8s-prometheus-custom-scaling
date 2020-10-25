@@ -8,4 +8,4 @@ rules:
       as: "${1}_per_second"
     metricsQuery: "sum(rate(<<.Series>>{<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)"
 prometheus:
-  url: http://prom-demo-prometheus-opera-prometheus.default
+  url: http://prometheus-operator-kube-p-prometheus.default
