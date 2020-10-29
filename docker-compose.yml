@@ -9,4 +9,4 @@ services:
     image:
       flipstone42/k8s-prometheus-custom-scaling:latest
     ports:
-      - "80:8000"
+      - "8000:8000"
